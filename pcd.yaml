@@ -1,0 +1,10 @@
+# PoisonCode Detector Configuration
+suspicious_threshold: 0.40
+malicious_threshold: 0.70
+fail_on: malicious  # malicious or suspicious
+model_path: models/pcd_model.joblib
+ignore_globs:
+  - "**/.git/**"
+  - "**/venv/**"
+  - "**/node_modules/**"
+  - "**/__pycache__/**"

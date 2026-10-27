@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poisoncode-detector"
+version = "0.1.0"
+description = "A tool that detects semantically malicious source-code patterns in Python files"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn>=1.3.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "joblib>=1.3.0",
+    "PyYAML>=6.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+]
+
+[project.scripts]
+pcd = "pcd.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pcd*"]
